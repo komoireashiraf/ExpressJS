@@ -2,7 +2,7 @@ const myDb = require("../Models/my_db");
 
 // Function getting all students
 const getStudents = () => {
-    console.log
+    console.log('Getting Here: ',myDb);
     return myDb.students;
 }
 
