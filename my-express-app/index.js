@@ -5,6 +5,7 @@ const my_business_logic = require('./Service/my_business.logic');
 
 const app = express();
 const port = 7000;
+app.use(express.json());
 
 
 // GET 
@@ -38,7 +39,13 @@ app.get('/list-of-students-by-id/:StutdentId',(request, response) => {
     // console.log("use value from front end", request,params.students)
     return response.status(200).send(my_business_logic.getStudentById(request));
 
+});
+// POST
 
+app.post('/sign-up',(request,response)) => {
+    
+    console.log("Logging request body", request.body)
+};
 
 app.listen(port, () => {
     console.log('Example app listening at http://localhost:${port}');
